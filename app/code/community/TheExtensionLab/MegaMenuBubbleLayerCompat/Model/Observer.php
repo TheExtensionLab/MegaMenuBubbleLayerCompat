@@ -2,9 +2,15 @@
 {
     public function megamenuGetfilterurlAfter(Varien_Event_Observer $observer)
     {
+
+        if(!$this->_getHelper()->isSeoEnabled()){
+            return $this;
+        }
+
         $urlData = $observer->getUrlData();
 
         $this->_replaceOptionValue($urlData);
+        $this->_replaceSpecialCharactersInOptionValue($urlData);
         $this->_replaceAttributeCode($urlData);
         $this->_regenerateUrl($urlData);
 
@@ -42,7 +48,12 @@
 
     private function _replaceOptionValue($urlData){
         $value = $this->_getHelper()->getOptionKey($urlData->getAttributeCode(), $urlData->getValue());
-        $urlData->setValue($value);
+        $urlData->setValue($this->_getHelper()->formatKey($value));
+        return $urlData;
+    }
+
+    private function _replaceSpecialCharactersInOptionValue($urlData){
+        $urlData->setValue($this->_getHelper()->formatKey($urlData->getValue()));
         return $urlData;
     }
 
