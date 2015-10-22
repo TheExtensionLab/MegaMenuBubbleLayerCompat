@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TheExtensionLab_MegaMenuBubbleLayerCompat>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <TheExtensionLab_MegaMenu/>
+                <Bubble_Layer/>
+            </depends>
+        </TheExtensionLab_MegaMenuBubbleLayerCompat>
+    </modules>
+</config>

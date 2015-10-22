@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TheExtensionLab_MegaMenuBubbleLayerCompat>
+            <version>0.1.0</version>
+        </TheExtensionLab_MegaMenuBubbleLayerCompat>
+    </modules>
+
+    <global>
+        <models>
+            <theextensionlab_megamenububblelayercompat>
+                <class>TheExtensionLab_MegaMenuBubbleLayerCompat_Model</class>
+            </theextensionlab_megamenububblelayercompat>
+        </models>
+
+        <events>
+            <megamenu_getfilterurl_after>
+                <observers>
+                    <theextensionlab_megamenububblelayercompat>
+                        <class>theextensionlab_megamenububblelayercompat/observer</class>
+                        <method>megamenuGetfilterurlAfter</method>
+                    </theextensionlab_megamenububblelayercompat>
+                </observers>
+            </megamenu_getfilterurl_after>
+        </events>
+    </global>
+
+</config>
